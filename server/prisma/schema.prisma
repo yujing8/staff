@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Staff {
+  id           Int    @id @default(autoincrement()) //员工ID
+  name         String  @unique         //员工姓名
+  password     String ?                //登陆密码
+  department   String      @default("技术部")    // 部门  技术部  研发部  销售部  市场部  董事办  运维部 账务部
+  position     String      @default("普通职工")    // 职位   普通职工  项目经理  会计 总经理  系统管理员
+  salary       String   @default("0") //薪水
+  attendance   String   @default("0")  //考勤
+}
+model Department {
+   id           Int    @id @default(autoincrement()) //部门ID
+   name        String  @unique         //部门名称
+}
+
+model Position {
+   id           Int    @id @default(autoincrement()) //职位ID
+   name        String  @unique         //部门名称
+}
