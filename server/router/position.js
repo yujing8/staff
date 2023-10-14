@@ -2,7 +2,6 @@ const prisma = require('./client');
 const express = require('express');
 const router = express.Router();
 router.use(express.json());
-
 //查询职位信息
 router.get('/position/query/:name', async (req, res) => {
     try {

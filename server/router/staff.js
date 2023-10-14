@@ -2,7 +2,6 @@ const prisma = require('./client');
 const express = require('express');
 const router = express.Router();
 router.use(express.json());
-
 //查询职工信息
 router.get('/staff/query/:name', async (req, res) => {
     try {
