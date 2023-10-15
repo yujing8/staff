@@ -17,7 +17,6 @@ router.get('/position/query/:name', async (req, res) => {
         res.send({ code: 400, data: error })
     }
 });
-
 //删除职位信息
 router.get('/position/delete/:id', async (req, res) => {
     try {
